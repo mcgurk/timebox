@@ -26,6 +26,7 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 | Command | Parameters | Optional parameters | What it does | Example from real communication with Divoom Android App |
 | --- | --- | --- | --- | --- |
 | 0x18 | YL YH MM DD HH MM SS 00(?)| | Set date and time | 010b001814140518103a1000c20002 |
+| 0x43 | 00 EN (0x00=off, 0x01=on) 00 00 00 00 00 TT (timer number) 00 00 32 | | Timer functions | 010d0043000304000000000304000032840002 (enable timer 1)
 | 0x44 | 00(?) 0a(?) 0a(?) 04(?) +182 bytes | | Show image 
 | 0x45 | 0x00 | MM (12h=0x00/24h=0x01) R0 G0 B0 | Clock view | 010900450003044b00ff0099030402 |
 | 0x45 | 0x01 | MM (C=0x00/F=0x01) R0 G0 B0 | Weather view | 010900450304004b000304009b0002 |
