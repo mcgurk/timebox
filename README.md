@@ -15,6 +15,15 @@ Example:
 -> ['01', '08', '00', '45', '00', '03', '04', 'f0', '00', '00', '3e', '03', '04', '02']
 ```
 
+Commands I have got so far:
+| Command | Parameters | Optional parameters | What it does |
+| --- | --- | --- | --- |
+| 0x45 | 0x00-0x0? (mode) | Switch view |
+| --- | --- | --- | --- |
+| 0xAB | ML MH | Sleep after (parameter in minutes) |
+| --- | --- | --- | --- |
+
+
 # Divoom Timebox CLI
 Control the divoom timebox using your terminal.
 Thanks to derHeinz and his [divoom-aurabox code](https://github.com/derHeinz/divoom-adapter) for giving some hints on how to interpret the protocol.
