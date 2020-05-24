@@ -33,6 +33,8 @@ Commands I have got so far:
 settime 010b001814140518103a1000c20002
 
 Weather animations:
+| Code | Animation |
+| --- | --- |
 | 0x01 | Sunshine, clear sky |
 | 0x02 | Sun + one cloud |
 | 0x03 | Sun + two clouds |
