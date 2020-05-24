@@ -18,8 +18,8 @@ Example:
 Commands I have got so far:
 | Command | Parameters | Optional parameters | What it does |
 | --- | --- | --- | --- |
-| 0x45 | 0x00-0x0? (mode) | Switch view |
-| 0xAB | ML MH | Sleep after (parameter in minutes) |
+| 0x45 | MM | | Switch view |
+| 0xAB | ML MH | | Sleep after (parameter in minutes) |
 
 
 # Divoom Timebox CLI
