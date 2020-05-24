@@ -1,6 +1,6 @@
-# Divoom TimeBox Mini
-
 # mcgurk notes 25.5.2020:
+
+# Divoom TimeBox Mini
 
 ## Packet structure:
 0x01 | SL SH | Payload | CL CH | 0x02
