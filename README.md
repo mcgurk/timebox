@@ -1,7 +1,12 @@
 Packet structure:
-0x01 | SLSH | CC | PP... | CLCH | 0x02
+0x01 | SL SH | CC | PP... | CL CH | 0x02
 --- | --- | --- | --- | --- | ---
 Fixed | Packet length low/high | Command | Parameters | Checksum low/high | Fixed
+--- | --- | --- | --- | --- | ---
+Example:
+01 | 08 00 | 45 | 00 01 f0 00 00 | 3e 03 04 | 02
+--- | --- | --- | --- | --- | ---
+--- | --- | Switch view | clock, 24h, R, G, B | --- | ---
 
 # Divoom Timebox CLI
 Control the divoom timebox using your terminal.
