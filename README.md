@@ -18,8 +18,8 @@ Example:
 Commands I have got so far:
 | Command | Parameters | Optional parameters | What it does |
 | --- | --- | --- | --- |
-| 0x45 | 0x00 | 0x00/0x01 (12h=0x00/24h=0x01) |  R0 G0 B0 | Switch to clock view |
-| 0x45 | 0x01 | 0x00/0x01 (C=0x00/F=0x01) |  R0 G0 B0 | Switch to weather view |
+| 0x45 | 0x00 | MM (12h=0x00/24h=0x01) R0 G0 B0 | Switch to clock view |
+| 0x45 | 0x01 | MM (C=0x00/F=0x01) R0 G0 B0 | Switch to weather view |
 | 0xAB | ML MH | | Sleep after (parameter in minutes) |
 
 
