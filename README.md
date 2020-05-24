@@ -25,38 +25,36 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 ## Commands I have got so far:
 | Command | Parameters | Optional parameters | What it does | Example from real communication with Divoom Android App |
 | --- | --- | --- | --- | --- |
-| 0x13 | | | ? | 0103060013160002 |
-| 0x15 | | | ? | 0103060015180002 |
-| 0x1f | | | ? | 0104001f00230002 |
-| 0x20 | | | ? | 01040020ff23030402 |
-| 0x26 | | | ? | 01040026ff29030402 |
-| 0x27 | | | ? | 0104002703052d0002 |
-| 0x2b | | | ? | 0104002bff2e030402 |
-| 0x2d | | | ? | 0104002dff30030402 |
-| 0x31 | | | ? | 0103060031340002 |
-| 0xb0 | | | ? | 01030600b0b30002 |
+| 0x13 | - | | ? | 0103060013160002 |
+| 0x15 | - | | ? | 0103060015180002 |
+| 0x1f | 00(?) | | ? | 0104001f00230002 |
+| 0x20 | ff(?) | | ? | 01040020ff23030402 |
+| 0x26 | ff(?) | | ? | 01040026ff29030402 |
+| 0x27 | 02(?) | | ? | 0104002703052d0002 |
+| 0x2b | ff(?) | | ? | 0104002bff2e030402 |
+| 0x2d | ff(?) | | ? | 0104002dff30030402 |
+| 0x31 | - | | ? | 0103060031340002 |
+| 0xb0 | - | | ? | 01030600b0b30002 |
 | 0x18 | YL YH MM DD HH MM SS 00(?)| | Set date and time | 010b001814140518103a1000c20002 |
-| 0x42 | | | ? | 010306004245000246 |
 | 0x43 | 00 EN (0x00=off, 0x01=on) 00 00 00 00 00 TT (timer number) 00 00 32 | | Timer functions | 010d0043000304000000000304000032840002 (enable timer 1)
 | 0x44 | 00(?) 0a(?) 0a(?) 04(?) +182 bytes | | Show image | |
 | 0x44 | 0x25 0x50 ... | | ? | |
 | 0x45 | 0x00 | MM (12h=0x00/24h=0x01) R0 G0 B0 | Clock view | 010900450003044b00ff0099030402 |
 | 0x45 | 0x01 | MM (C=0x00/F=0x01) R0 G0 B0 | Weather view | 010900450304004b000304009b0002 |
 | 0x45 | 0x02 | R0 G0 B0 BB (brightness) 00 (?) | Light view | 010900450305f030006400d4030402 |
-| 0x46 | | | ? | 0103060046490002 |
-| 0x57 | | | ? | 01040057005b0002 |
+| 0x46 | - | | ? | 0103060046490002 |
+| 0x57 | 00(?) | | ? | 01040057005b0002 |
 | 0x5f | TT WW | | Set temperature and weather | 0105005f0703056d0002 |
 | 0x71 | 0x00 | | Stopwatch view | 0104007100750002 |
 | 0x71 | 0x01 | | Scoreboard view | 010400710304760002 |
 | 0x72 | 0x00 | 00(stop)/01(start)/02(reset) | Stopwatch functions | 01050072000304780002 (start stopwatch) |
 | 0x72 | 0x01 0x01(?) BL BH RL RH | | Scoreboard functions | 01090072030403040305000a00890002 (10-2, blue top, red under) |
-| 0x83 | | | ? | 01040083ff86030402 |
-| 0x89 | | | ? | 01050089030520b00002 |
-| 0xa2 | | | ? | 01030600a2a500025a |
+| 0x83 | ff(?) | | ? | 01040083ff86030402 |
+| 0x89 | 02(?) 20(?) | | ? | 01050089030520b00002 |
 | 0xab | ML MH | | Sleep after (parameter in minutes, low/high) | 010500ab1e00ce0002 (0xce = 30 minutes) |
-| 0xa8 | | | ? | 01030600a8ab0002 |
-| 0xac | | | ? | 01030600acaf0002 |
-| 0xb3 | | | ? | 01030600b3b60002 |
+| 0xa8 | - | | ? | 01030600a8ab0002 |
+| 0xac | - | | ? | 01030600acaf0002 |
+| 0xb3 | - | | ? | 01030600b3b60002 |
 
 ### Image dataformat
 11x11 image, 12bits/pixel -> 1452bits, extra nibble 0 -> 1456bits = 182 bytes. Bytes inside 16bit word are swapped. 2 pixels as 3 bytes: GR RB BG
