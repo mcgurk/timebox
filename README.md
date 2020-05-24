@@ -3,7 +3,7 @@
 ## Packet structure:
 0x01 | SL SH | Payload | CL CH | 0x02
 --- | --- | --- | --- | ---
-Fixed | Packet length low/high | Command+Parameters | Checksum low/high | Fixed
+Fixed | Packet length (including 2 checksum bytes and excluding first and last fixed bytes) low/high | Command+Parameters | Checksum (16bit word sum of packet length+payload bytes) low/high | Fixed
 
 If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like this:
 | byte | masked version |
