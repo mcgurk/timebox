@@ -38,7 +38,7 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 | 0xab | ML MH | | Sleep after (parameter in minutes, low/high) | 010500ab1e00ce0002 (0xce = 30 minutes) |
 
 ### Image dataformat
-12bits/pixel -> 1452bits, last nibble 0 -> 1456bits = 182 bytes. Bytes inside 16bit word are swapped. 2 pixels as 3 bytes: GR RB BG
+11x11 image, 12bits/pixel -> 1452bits, extra nibble 0 -> 1456bits = 182 bytes. Bytes inside 16bit word are swapped. 2 pixels as 3 bytes: GR RB BG
 
 ### Weather animations:
 | Code | Animation |
