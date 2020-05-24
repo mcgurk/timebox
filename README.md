@@ -6,11 +6,11 @@
 Fixed | Packet length low/high | Command+Parameters | Checksum low/high | Fixed
 
 If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like this:
+| byte | masked version |
 | --- | --- |
 | 0x01 | 0x03 0x04 |
 | 0x02 | 0x03 0x05 | 
 | 0x03 | 0x03 0x06 |
-| --- | --- |
 
 ### Example:
 01 | 08 00 | 45 | 00 01 f0 00 00 | 3e 03 04 | 02
