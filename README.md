@@ -49,6 +49,7 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 | 0x71 | 0x01 | | Scoreboard view | 010400710304760002 |
 | 0x72 | 0x00 | 00(stop)/01(start)/02(reset) | Stopwatch functions | 01050072000304780002 (start stopwatch) |
 | 0x72 | 0x01 0x01(?) BL BH RL RH | | Scoreboard functions | 01090072030403040305000a00890002 (10-2, blue top, red under) |
+| 0x74 | BB (0-100, 0x00-0x64) | | Global brightness | |
 | 0x83 | ff(?) | | ? | 01040083ff86030402 |
 | 0x89 | 02(?) 20(?) | | ? | 01050089030520b00002 |
 | 0xab | ML MH | | Sleep after (parameter in minutes, low/high) | 010500ab1e00ce0002 (0xce = 30 minutes) |
