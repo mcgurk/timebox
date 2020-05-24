@@ -3,7 +3,7 @@
 ## Packet structure:
 0x01 | SL SH | Payload | CL CH | 0x02
 --- | --- | --- | --- | ---
-Fixed | Packet length (including payload and 2 checksum bytes and excluding first and last fixed bytes) low/high | Command+Parameters | Checksum (16bit word sum of packet length+payload bytes) low/high | Fixed
+Fixed | Packet length (including payload and 2 checksum bytes and excluding first and last fixed bytes) low/high (before any masking) | Command+Parameters | Checksum (16bit word sum of packet length+payload bytes) low/high | Fixed
 
 If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like this:
 | byte | masked version |
@@ -15,7 +15,7 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 ### Example:
 01 | 08 00 | 45 | 00 01 f0 00 00 | 3e 03 04 | 02
 --- | --- | --- | --- | --- | ---
-||| Switch view | clock, 24h, R, G, B | (0x01 masked to 0x03 0x04) ||
+|| 8 bytes (payload+checksum without masking) | Switch view | clock, 24h, R, G, B | (0x01 masked to 0x03 0x04) ||
 
 ```
 ./timebox.py --address 11:75:58:C5:2D:6F --debug raw --payload 450001f00000
