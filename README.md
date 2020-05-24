@@ -1,13 +1,13 @@
-mcgurk notes in 25.5.2020:
+# mcgurk notes in 25.5.2020:
 
-Packet structure:
+## Packet structure:
 0x01 | SL SH | Payload | CL CH | 0x02
 --- | --- | --- | --- | ---
 Fixed | Packet length low/high | Command+Parameters | Checksum low/high | Fixed
 
 If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like this: 0x01 = 0x03 0x04, 0x02 = 0x03 0x05 and 0x03 = 0x03 0x06.
 
-Example:
+### Example:
 01 | 08 00 | 45 | 00 01 f0 00 00 | 3e 03 04 | 02
 --- | --- | --- | --- | --- | ---
 ||| Switch view | clock, 24h, R, G, B | 0x01 masked to 0x03 0x04 ||
@@ -17,7 +17,7 @@ Example:
 -> ['01', '08', '00', '45', '00', '03', '04', 'f0', '00', '00', '3e', '03', '04', '02']
 ```
 
-Commands I have got so far:
+## Commands I have got so far:
 | Command | Parameters | Optional parameters | What it does | Example from real communication with Divoom Android App |
 | --- | --- | --- | --- | --- |
 | 0x18 | YL YH MM DD HH MM SS 00(?)| | Set date and time | 010b001814140518103a1000c20002 |
@@ -31,7 +31,7 @@ Commands I have got so far:
 | 0x72 | 0x01 0x01(?) BL BH RL RH | | Scoreboard functions | 01090072030403040305000a00890002 (10-2, blue top, red under) |
 | 0xab | ML MH | | Sleep after (parameter in minutes, low/high) | 010500ab1e00ce0002 (0xce = 30 minutes) |
 
-Weather animations:
+### Weather animations:
 | Code | Animation |
 | --- | --- |
 | 0x01 | Sunshine, clear sky |
