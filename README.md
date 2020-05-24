@@ -1,7 +1,7 @@
 Packet structure:
-0x01 | SL SH | CC | PP... | CL CH | 0x02
---- | --- | --- | --- | --- | ---
-Fixed | Packet length low/high | Command | Parameters | Checksum low/high | Fixed
+0x01 | SL SH | Payload | CL CH | 0x02
+--- | --- | --- | --- | ---
+Fixed | Packet length low/high | Command+Parameters | Checksum low/high | Fixed
 
 If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like this: 0x01 = 0x03 0x04, 0x02 = 0x03 0x05 and 0x03 = 0x03 0x06.
 
@@ -18,7 +18,8 @@ Example:
 Commands I have got so far:
 | Command | Parameters | Optional parameters | What it does |
 | --- | --- | --- | --- |
-| 0x45 | MM | | Switch view |
+| 0x45 | 0x00 | 0x00/0x01 (12h=0x00/24h=0x01) |  R0 G0 B0 | Switch to clock view |
+| 0x45 | 0x01 | 0x00/0x01 (C=0x00/F=0x01) |  R0 G0 B0 | Switch to weather view |
 | 0xAB | ML MH | | Sleep after (parameter in minutes) |
 
 
