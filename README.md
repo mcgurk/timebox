@@ -1,3 +1,8 @@
+Packet structure:
+0x01 | SLSH | CC | PP... | CLCH | 0x02
+--- | --- | --- | --- | --- | ---
+Fixed | Packet length low/high | Command | Parameters | Checksum low/high | Fixed
+
 # Divoom Timebox CLI
 Control the divoom timebox using your terminal.
 Thanks to derHeinz and his [divoom-aurabox code](https://github.com/derHeinz/divoom-adapter) for giving some hints on how to interpret the protocol.
