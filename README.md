@@ -1,4 +1,4 @@
-# mcgurk notes in 25.5.2020:
+# mcgurk notes 25.5.2020:
 
 ## Packet structure:
 0x01 | SL SH | Payload | CL CH | 0x02
@@ -65,6 +65,7 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 | 0x14 | Counts from 2 to 9 with graphical numbers(?) |
 | 0x15 | (and 0x00, 0x16...) "demo"/mixed animations |
 
+------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 
 # Divoom Timebox CLI
