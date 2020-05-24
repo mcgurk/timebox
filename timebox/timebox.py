@@ -523,13 +523,20 @@ def settime(ctx, date):
     ctx.obj['dev'].send([0x01]+mask(head)+mask([ck1,ck2])+[0x02])
 
 
-@cli.command(short_help='raw message')
 @click.option('--mask', '_mask', is_flag=True)
+@click.option('--payload', '_payload', is_flag=True)
 @click.argument('hexbytes', nargs=1)
 @click.pass_context
-def raw(ctx, hexbytes, _mask):
+def raw(ctx, hexbytes, _mask, _payload):
     if (_mask):
         ctx.obj['dev'].send(bytearray(mask(unhexlify(hexbytes))))
+    elif (_payload):
+        data = bytearray(unhexlify(hexbytes))
+        s = len(hexbytes)/2+2
+        size = [s & 0x00ff, s >> 8]
+        ck1, ck2 = checksum(sum(data)+sum(size))
+        packet = [0x01] + mask(size) + mask(data) + mask([ck1, ck2]) + [0x02]
+        ctx.obj['dev'].send(packet)
     else:
         ctx.obj['dev'].send(bytearray(unhexlify(hexbytes)))
 
