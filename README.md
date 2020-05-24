@@ -1,3 +1,5 @@
+mcgurk notes in 25.5.2020:
+
 Packet structure:
 0x01 | SL SH | Payload | CL CH | 0x02
 --- | --- | --- | --- | ---
@@ -21,12 +23,39 @@ Commands I have got so far:
 | 0x45 | 0x00 | MM (12h=0x00/24h=0x01) R0 G0 B0 | Clock view | 010900450003044b00ff0099030402 |
 | 0x45 | 0x01 | MM (C=0x00/F=0x01) R0 G0 B0 | Weather view | 010900450304004b000304009b0002 |
 | 0x45 | 0x02 | R0 G0 B0 BB (brightness) 00 (?) | Light view | 010900450305f030006400d4030402 |
+| 0x5f | TT WW | | Set temperature and weather | 0105005f0703056d0002 |
 | 0x71 | 0x00 | | Stopwatch view | 0104007100750002 |
 | 0x71 | 0x01 | | Scoreboard view | 010400710304760002 |
 | 0x72 | 0x00 | 00(stop)/01(start)/02(reset) | Stopwatch functions | 01050072000304780002 (start stopwatch) |
 | 0x72 | 0x01 0x01(?) BL BH RL RH | | Scoreboard functions | 01090072030403040305000a00890002 (10-2, blue top, red under) |
 | 0xab | ML MH | | Sleep after (parameter in minutes, low/high) | 010500ab1e00ce0002 (0xce = 30 minutes) |
 
+settime 010b001814140518103a1000c20002
+
+Weather animations:
+| 0x01 | Sunshine, clear sky |
+| 0x02 | Sun + one cloud |
+| 0x03 | Sun + two clouds |
+| 0x04 | Sun + three clouds |
+| 0x05 | Raining |
+| 0x06 | Raining, but sun is peeking behind cloud |
+| 0x07 | Rain and thunder |
+| 0x08 | Snowing |
+| 0x09 | Fog |
+| 0x0a | Night, clear night (moon+stars) |
+| 0x0b | Night, two clouds |
+| 0x0c | Night, three clouds |
+| 0x0d | Night, raining |
+| 0x0e | Night and raining, but sun is peeking behind cloud (sun in night?) |
+| 0x0f | Night, rain and thunder |
+| 0x10 | Night, snowing |
+| 0x11 | Night, fog |
+| 0x12 | Clock(?) |
+| 0x13 | Color noise(?)|
+| 0x14 | Counts from 2 to 9 with graphical numbers(?) |
+| 0x00, 0x15, 0x16... | "demo"/mixed animations |
+
+------------------------------------------------------------------------------------------------------
 
 # Divoom Timebox CLI
 Control the divoom timebox using your terminal.
