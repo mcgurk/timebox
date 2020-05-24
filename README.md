@@ -55,7 +55,7 @@ Weather animations:
 | 0x12 | Clock(?) |
 | 0x13 | Color noise(?)|
 | 0x14 | Counts from 2 to 9 with graphical numbers(?) |
-| 0x00, 0x15, 0x16... | "demo"/mixed animations |
+| 0x15 | (and 0x00, 0x16...) "demo"/mixed animations |
 
 ------------------------------------------------------------------------------------------------------
 
