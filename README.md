@@ -37,7 +37,7 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 | 0x2d | ff(?) | | ? | 0104002dff30030402 |
 | 0x31 | - | | ? | 0103060031340002 |
 | 0xb0 | - | | ? | 01030600b0b30002 |
-| 0x18 | Y(L/H?) Y(L/H?) MM DD HH MM SS 00(?)| | Set date and time | 010b001814140518103a1000c20002 |
+| 0x18 | YY%100 YY/100 MM DD HH MM SS 00(?)| | Set date and time | 010b001814140518103a1000c20002 |
 | 0x43 | 00 EN (0x00=off, 0x01=on) 00 00 00 00 00 TT (timer number) 00 00 32 | | Timer functions | 010d0043000304000000000304000032840002 (enable timer 1)
 | 0x44 | 00(?) 0a(?) 0a(?) 04(?) +182 bytes | | Show image | |
 | 0x44 | 0x25 0x50 ... | | ? | |
