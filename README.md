@@ -43,7 +43,7 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 | 0x44 | 0x25 0x50 ... | | ? | |
 | 0x45 | 0x00 | MM (12h=0x00/24h=0x01) R0 G0 B0 | Clock view | 010900450003044b00ff0099030402 |
 | 0x45 | 0x01 | MM (C=0x00/F=0x01) R0 G0 B0 | Weather view | 010900450304004b000304009b0002 |
-| 0x45 | 0x02 | R0 G0 B0 BB (brightness 0-100) 00 (?) | Light view | 010900450305f030006400d4030402 |
+| 0x45 | 0x02 | R0 G0 B0 BB (brightness 0-100) MM(mode? 0x00=normal?) | Light view | 010900450305f030006400d4030402 |
 | 0x46 | - | | ? | 0103060046490002 |
 | 0x57 | 00(?) | | ? | 01040057005b0002 |
 | 0x5f | TT WW | | Set temperature and weather | 0105005f0703056d0002 |
