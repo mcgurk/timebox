@@ -59,7 +59,7 @@ If there is 0x01, 0x02 or 0x03 between start and end byte, they are masked like 
 | 0xac | - | | ? | 01030600acaf0002 |
 | 0xb3 | - | | ? | 01030600b3b60002 |
 
-https://github.com/mumpitzstuff/fhem-Divoom
+Other good list for some other divoom: https://github.com/mumpitzstuff/fhem-Divoom
 
 ### Image dataformat
 11x11 image, 12bits/pixel -> 1452bits, extra nibble 0 -> 1456bits = 182 bytes. Bytes inside 16bit word are swapped. 2 pixels as 3 bytes: GR RB BG
